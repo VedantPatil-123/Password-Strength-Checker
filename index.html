@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="styles.css">
+<title>Password Checker</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Password Strength Checker</h2>
+    <div class="inputArea">
+      <input type="text" id="YourPassword" placeholder="Enter your password" autocomplete="new-password" />
+      <button class="icon-btn" onclick="toggleVisibility()" id="eyeBtn" title="Show/Hide">🙈</button>
+      <button class="copy-btn" onclick="copyPassword()" title="Copy">📋</button>
+      <button class="check-breach-btn" onclick="checkBreach()" title="Check if password was breached">Check Breach</button>
+    </div>
+
+    <div class="strengthMeter">
+      <div class="strengthBar" id="strengthBar"></div>
+    </div>
+    <div class="strengthText" id="strengthText">Enter a password</div>
+    <div class="timeToCrack" id="timeToCrack"></div>
+    <div class="suggestion" id="suggestionText"></div>
+    <div class="historyWarning" id="historyWarning"></div>
+
+    <button class="generate-btn" onclick="generatePassword()">🔁 Suggest Strong Password</button>
+
+    <div class="options">
+      <h3>Generator Options & Requirements</h3>
+      <label><input type="checkbox" id="optUpper" checked /> Require Uppercase Letters</label>
+      <label><input type="checkbox" id="optLower" checked /> Require Lowercase Letters</label>
+      <label><input type="checkbox" id="optNumber" checked /> Require Numbers</label>
+      <label><input type="checkbox" id="optSpecial" checked /> Require Special Characters (@$!%*#?&^_-)</label>
+      <label>
+        Password Length:
+        <input type="number" id="optLength" min="8" max="32" value="12" />
+      </label>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
